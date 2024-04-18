@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { PropType, computed } from "vue";
 import GemmaInput from "../UI/GemmaInput.vue";
 
 // Itereare el in modo da avere lo stesso numero di input sia su Data che in questo componente
@@ -9,17 +9,15 @@ import GemmaInput from "../UI/GemmaInput.vue";
 
 const props = defineProps({
   modelValue: {
-    default: {
-      first: '',
-      second: ''
-    }
+    type: Array as PropType<Array<any>>,
+    default: () => []
   },
-  el: []
+
 })
 
 const emit = defineEmits(['update:modelValue'])
 
-const model = computed({
+const modelConfigurator = computed({
   get: () => props.modelValue,
   set: (value) => {
     emit('update:modelValue', value)
@@ -29,15 +27,15 @@ const model = computed({
 </script>
 
 <template>
-  
+
   <div class="configurator">
     CONFIGURATOR
     <br>
-    <pre> {{ model }}</pre>
+    <pre>{{ modelConfigurator }}</pre>
     <br>
-    <GemmaInput v-model="model.first"  />
-    <br>
-    <GemmaInput v-model="model.second" />
+    <GemmaInput v-model="element.value" :placeholder="element.placeholder" :borderColor="element.borderColor"
+      v-for="(element) of modelConfigurator" />
+
   </div>
 
 </template>

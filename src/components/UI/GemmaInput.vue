@@ -4,9 +4,13 @@ import Input from "./Input.vue";
 
 const props = defineProps({
   modelValue: {
-    default: 'loldi'
+    default: ''
   },
   placeholder: {
+    type: String,
+    default: ''
+  },
+  borderColor: {
     type: String,
     default: ''
   }
@@ -27,5 +31,7 @@ const model = computed({
 
 <template>
   GEMMA INPUT
-  <input v-model="model" :placeholder="placeholder" />
+  <br>
+  <input v-model="model" :style="{ 'border-color': borderColor }" :placeholder="placeholder" />
+  <br>
 </template>
