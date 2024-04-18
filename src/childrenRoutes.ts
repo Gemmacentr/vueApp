@@ -1,24 +1,20 @@
-import Home from "./components/Home.vue";
-import Data from "./components/Data.vue";
-import User from "./components/User.vue";
-
-const router = [
+const childrenRoutes = [
   {
     path: "",
     name: "home",
-    component: () => Home,
+    component: () => import('./components/Home.vue'),
   },
 
   {
-    path: "/data",
+    path: "data",
     name: "data",
-    component: () => Data,
+    component: () => import('./components/Data.vue'),
   },
   {
-    path: "/user",
+    path: "user",
     name: "user",
-    component: () => User,
+    component: () => import('./components/User.vue'),
   },
 ];
 
-export default router;
+export default childrenRoutes;

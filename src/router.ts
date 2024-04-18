@@ -1,17 +1,16 @@
 import { createRouter, createWebHistory } from "vue-router";
 import childrenRoutes from "./childrenRoutes.ts";
-import MainRoute from "../src/components/MainRoute/Main.vue";
 
-const mainRoute = createRouter({
+const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: "",
+      path: "/",
       name: "main",
-      component: () => MainRoute,
+      component: () => import('../src/components/MainRoute/Main.vue'),
       children: [...childrenRoutes],
     },
   ],
 });
 
-export default mainRoute;
+export default router;
