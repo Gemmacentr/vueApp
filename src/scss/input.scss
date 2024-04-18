@@ -1,7 +1,18 @@
-.input-container {
+.centered-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 100vh;
+}
+
+.input-container {
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  text-align: center;
   margin-top: 3rem;
 }
 
@@ -10,20 +21,20 @@
 }
 
 .label {
+  display: block;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .field {
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  transition: border-color 0.3s, box-shadow 0.3s;
-  width: 200px; /* Imposta la larghezza dell'input */
+  font-size: 16px;
 }
 
 .field:focus {
   outline: none;
   border-color: dodgerblue;
-  box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
 }

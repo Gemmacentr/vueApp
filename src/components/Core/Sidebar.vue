@@ -55,28 +55,30 @@ const toggleMenu = () => {
         </div>
       </div>
     </aside>
-    <div :class="'cards'">
-      <img :class="'foto'" :src="Intro" />
+    <div :class="'wrapper'">
+      <div :class="'cards'">
+        <img :class="'foto'" :src="Intro" />
 
-      <img :class="'foto'" :src="Anatomia" />
+        <img :class="'foto'" :src="Anatomia" />
 
-      <img :class="'foto'" :src="Poteri" />
+        <img :class="'foto'" :src="Poteri" />
 
-      <img :class="'foto'" :src="Rush" />
+        <img :class="'foto'" :src="Rush" />
 
-      <img :class="'foto'" :src="Post2" />
+        <img :class="'foto'" :src="Post2" />
 
-      <img :class="'foto'" :src="Rush2" />
+        <img :class="'foto'" :src="Rush2" />
 
-      <img :class="'foto'" :src="Images" />
+        <img :class="'foto'" :src="Images" />
 
-      <img :class="'foto'" :src="Post4" />
+        <img :class="'foto'" :src="Post4" />
 
-      <img :class="'foto'" :src="Post7" />
+        <img :class="'foto'" :src="Post7" />
 
-      <img :class="'foto'" :src="Images2" />
+        <img :class="'foto'" :src="Images2" />
 
-      <img :class="'foto'" :src="posta" />
+        <img :class="'foto'" :src="posta" />
+      </div>
     </div>
   </main>
 </template>
