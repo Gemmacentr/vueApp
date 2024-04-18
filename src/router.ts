@@ -1,29 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
+import childrenRoutes from "./childrenRoutes.ts";
+import MainRoute from "../src/components/MainRoute/Main.vue";
 
-import Home from "./components/Home.vue";
-import Data from "./components/Data.vue";
-import User from "./components/User.vue";
-
-const router = createRouter({
+const mainRoute = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: "/",
-      name: "home",
-      component: () => Home,
-    },
-
-    {
-      path: "/data",
-      name: "data",
-      component: () => Data,
-    },
-    {
-      path: "/user",
-      name: "user",
-      component: () => User,
+      path: "",
+      name: "main",
+      component: () => MainRoute,
+      children: [...childrenRoutes],
     },
   ],
 });
 
-export default router;
+export default mainRoute;
