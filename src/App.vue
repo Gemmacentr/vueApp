@@ -6,6 +6,7 @@ import { computed } from "vue";
 
 const route = useRoute();
 defineEmits(["sidebarDescription"]);
+/* MAIN che conterrà la routerView*/
 
 const isHomeRoute = computed(() => route.name === "home");
 </script>

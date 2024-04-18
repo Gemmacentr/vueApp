@@ -12,7 +12,6 @@ const changeValue = (value: any) => {
 </script>
 
 <template>
-  <h2>Scrivi</h2>
   <Configurator v-model:title="name" v-model:title2="surname" />
 
   <Configurator
