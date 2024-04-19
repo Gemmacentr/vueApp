@@ -22,6 +22,9 @@ const toggleHeader = () => {
       <li :class="'loud'">
         <router-link :to="{ path: 'user' }"> User</router-link>
       </li>
+      <li :class="'loud'">
+        <router-link :to="{ path: 'Dataobject' }"> DataObject</router-link>
+      </li>
     </ul>
   </nav>
 </template>

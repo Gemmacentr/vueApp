@@ -10,34 +10,33 @@ import GemmaInput from "../UI/GemmaInput.vue";
 const props = defineProps({
   modelValue: {
     type: Array as PropType<Array<any>>,
-    default: () => []
+    default: () => [],
   },
+});
 
-})
-
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(["update:modelValue"]);
 
 const modelConfigurator = computed({
   get: () => props.modelValue,
   set: (value) => {
-    emit('update:modelValue', value)
-  }
-})
-
+    emit("update:modelValue", value);
+  },
+});
 </script>
 
 <template>
-
   <div class="configurator">
     CONFIGURATOR
-    <br>
-    <pre>{{ modelConfigurator }}</pre>
-    <br>
-    <GemmaInput v-model="element.value" :placeholder="element.placeholder" :borderColor="element.borderColor"
-      v-for="(element) of modelConfigurator" />
-
+    <br />
+    {{ modelValue }}
+    <br />
+    <GemmaInput
+      v-model="element.value"
+      :placeholder="element.placeholder"
+      :borderColor="element.borderColor"
+      v-for="element of modelConfigurator"
+    />
   </div>
-
 </template>
 <style lang="scss">
 .configurator {

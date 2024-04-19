@@ -5,38 +5,34 @@ import Configurator from "./Misc/Configurator.vue";
 
 const elementsOfData = ref([
   {
-    value: 'a',
-    placeholder: 'firstPlaceholder',
-    borderColor: 'blue'
+    value: "a",
+    placeholder: "firstPlaceholder",
+    borderColor: "yellow",
   },
   {
-    value: 'b',
-    placeholder: 'secondPlaceholder',
-    borderColor: 'red'
+    value: "b",
+    placeholder: "secondPlaceholder",
+    borderColor: "red",
   },
   {
-    value: 'c',
-    placeholder: 'thirdPlaceholder',
-    borderColor: 'green'
-  }
-])
-
+    value: "c",
+    placeholder: "thirdPlaceholder",
+    borderColor: "green",
+  },
+]);
 </script>
 
 <template>
-
   <div class="margin">
-    <pre>{{ elementsOfData
-   }}</pre>
+    Data
+    <pre>{{ elementsOfData }}</pre>
 
-    <div v-for="(_) of elementsOfData">
-      <GemmaInput v-model="_.value"  />
+    <div v-for="_ of elementsOfData">
+      <GemmaInput v-model="_.value" />
     </div>
-
 
     <Configurator v-model="elementsOfData" />
   </div>
-
 </template>
 
 <style lang="scss">

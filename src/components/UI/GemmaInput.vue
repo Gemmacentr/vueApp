@@ -1,37 +1,27 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import Input from "./Input.vue";
 
 const props = defineProps({
   modelValue: {
-    default: ''
+    default: "",
   },
   placeholder: {
     type: String,
-    default: ''
+    default: "",
   },
-  borderColor: {
-    type: String,
-    default: ''
-  }
-})
+});
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(["update:modelValue"]);
 
 const model = computed({
   get: () => props.modelValue,
   set: (value) => {
-    emit('update:modelValue', value)
-  }
-})
-
-
-
+    emit("update:modelValue", value);
+  },
+});
 </script>
 
 <template>
   GEMMA INPUT
-  <br>
-  <input v-model="model" :style="{ 'border-color': borderColor }" :placeholder="placeholder" />
-  <br>
+  <input v-model="model" :placeholder="placeholder" />
 </template>
