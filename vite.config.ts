@@ -8,3 +8,17 @@ export default defineConfig({
     alias: [],
   },
 });
+// vue.config.js
+module.exports = {
+  devServer: {
+    proxy: {
+      "/assets": {
+        target: "https://github.com/Gemmacentr/vueApp",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/assets": "/assets",
+        },
+      },
+    },
+  },
+};
