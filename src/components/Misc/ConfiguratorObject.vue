@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PropType, computed } from "vue";
+import { computed } from "vue";
 import GemmaInput from "../UI/GemmaInput.vue";
 const props = defineProps({
   modelValue: {
