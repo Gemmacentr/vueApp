@@ -1,5 +1,5 @@
 import { createApp } from "vue";
-import "./assets/_partials.scss";
+import "./_partials.scss";
 import App from "./App.vue";
 import router from "./router";
 
