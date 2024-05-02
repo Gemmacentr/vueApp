@@ -1,28 +1,33 @@
 <script setup lang="ts">
+import images from "../../assets/images";
 import { jsonData } from "../Api/Api";
 import { ApiData } from "../Modelli";
 import { PropType, ref } from "vue";
-import Anatomia from "../../assets/Images_progetto/Anatomia.jpg";
-import Intro from "../../assets/Images_progetto/Intro.jpg";
-import Poteri from "../../assets/Images_progetto/Poteri_Privilegi.png";
-import Rush from "../../assets/Images_progetto/rush-3.png";
-import Rush2 from "../../assets/Images_progetto/rush.png";
-import Post2 from "../../assets/Images_progetto/post-2.gif";
-import Post4 from "../../assets/Images_progetto/post-4.jpeg";
-import Post7 from "../../assets/Images_progetto/post-7.gif";
-import Images from "../../assets/Images_progetto/images.jpg";
-import Images2 from "../../assets/Images_progetto/image2.jpg";
-import posta from "../../assets/Images_progetto/24_personal.jpg";
+import { imagesModel } from "../Modelli/imagesModel";
+
 defineProps({
   elementsToShow: {
     type: Array as PropType<ApiData[]>,
     default: () => [],
   },
-  imageUrl: Image,
-  title: String,
-  id: Number,
-  description: String,
 });
+
+const items = ref<imagesModel[]>([
+  {
+    imageAnatomia: images.Anatomia,
+    imageIntro: images.Intro,
+    image24: images.Images,
+    image2: images.Post2,
+    image3: images.Post4,
+    imagePoteri: images.Poteri,
+    imageRush: images.Rush,
+    imageRush2: images.Rush2,
+    image4: images.Post7,
+    image5: images.posta,
+    image6: images.Post10,
+    image7: images.Images2,
+  },
+]);
 const is_expanded = ref(false);
 
 const toggleMenu = () => {
@@ -55,29 +60,20 @@ const toggleMenu = () => {
         </div>
       </div>
     </aside>
-    <div :class="'wrapper'">
+    <div :class="'wrapper'" v-for="(image, index) in items" :key="index">
       <div :class="'cards'">
-        <img :class="'foto'" :src="Intro" />
-
-        <img :class="'foto'" :src="Anatomia" />
-
-        <img :class="'foto'" :src="Poteri" />
-
-        <img :class="'foto'" :src="Rush" />
-
-        <img :class="'foto'" :src="Post2" />
-
-        <img :class="'foto'" :src="Rush2" />
-
-        <img :class="'foto'" :src="Images" />
-
-        <img :class="'foto'" :src="Post4" />
-
-        <img :class="'foto'" :src="Post7" />
-
-        <img :class="'foto'" :src="Images2" />
-
-        <img :class="'foto'" :src="posta" />
+        <img :class="'foto'" :src="image.image2" alt="Immagine" />
+        <img :class="'foto'" :src="image.image24" alt="Immagine" />
+        <img :class="'foto'" :src="image.image3" alt="Immagine" />
+        <img :class="'foto'" :src="image.image4" alt="Immagine" />
+        <img :class="'foto'" :src="image.image5" alt="Immagine" />
+        <img :class="'foto'" :src="image.image6" alt="Immagine" />
+        <img :class="'foto'" :src="image.image7" alt="Immagine" />
+        <img :class="'foto'" :src="image.imageAnatomia" alt="Immagine" />
+        <img :class="'foto'" :src="image.imageIntro" alt="Immagine" />
+        <img :class="'foto'" :src="image.imagePoteri" alt="Immagine" />
+        <img :class="'foto'" :src="image.imageRush" alt="Immagine" />
+        <img :class="'foto'" :src="image.imageRush2" alt="Immagine" />
       </div>
     </div>
   </main>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import GemmaInput from "./UI/GemmaInput.vue";
-import Configurator from "./Misc/Configurator.vue";
+
 import ConfiguratorObject from "./Misc/ConfiguratorObject.vue";
-import { RefSymbol } from "@vue/reactivity";
+
 const elementsOfData = ref({
   first: {
     value: "a",
