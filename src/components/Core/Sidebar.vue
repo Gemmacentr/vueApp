@@ -3,7 +3,6 @@ import images from "../../assets/images";
 import { jsonData } from "../Api/Api";
 import { ApiData } from "../Modelli";
 import { PropType, ref } from "vue";
-import { imagesModel } from "../Modelli/imagesModel";
 
 defineProps({
   elementsToShow: {
@@ -12,22 +11,21 @@ defineProps({
   },
 });
 
-const items = ref<imagesModel[]>([
-  {
-    imageAnatomia: images.Anatomia,
-    imageIntro: images.Intro,
-    image24: images.Images,
-    image2: images.Post2,
-    image3: images.Post4,
-    imagePoteri: images.Poteri,
-    imageRush: images.Rush,
-    imageRush2: images.Rush2,
-    image4: images.Post7,
-    image5: images.posta,
-    image6: images.Post10,
-    image7: images.Images2,
-  },
+const items = ref([
+  images.Anatomia,
+  images.Intro,
+  images.Images2,
+  images.Post10,
+  images.posta,
+  images.Post7,
+  images.Rush2,
+  images.Rush,
+  images.Poteri,
+  images.Post4,
+  images.Post2,
+  images.Images,
 ]);
+
 const is_expanded = ref(false);
 
 const toggleMenu = () => {
@@ -60,20 +58,11 @@ const toggleMenu = () => {
         </div>
       </div>
     </aside>
-    <div :class="'wrapper'" v-for="(image, index) in items" :key="index">
+    <div :class="'wrapper'">
       <div :class="'cards'">
-        <img :class="'foto'" :src="image.image2" alt="Immagine" />
-        <img :class="'foto'" :src="image.image24" alt="Immagine" />
-        <img :class="'foto'" :src="image.image3" alt="Immagine" />
-        <img :class="'foto'" :src="image.image4" alt="Immagine" />
-        <img :class="'foto'" :src="image.image5" alt="Immagine" />
-        <img :class="'foto'" :src="image.image6" alt="Immagine" />
-        <img :class="'foto'" :src="image.image7" alt="Immagine" />
-        <img :class="'foto'" :src="image.imageAnatomia" alt="Immagine" />
-        <img :class="'foto'" :src="image.imageIntro" alt="Immagine" />
-        <img :class="'foto'" :src="image.imagePoteri" alt="Immagine" />
-        <img :class="'foto'" :src="image.imageRush" alt="Immagine" />
-        <img :class="'foto'" :src="image.imageRush2" alt="Immagine" />
+        <div v-for="(image, index) in items" :key="index">
+          <img :class="'foto'" :src="image" alt="Immagine" />
+        </div>
       </div>
     </div>
   </main>
