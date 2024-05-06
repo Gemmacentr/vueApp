@@ -17,7 +17,7 @@ const toggleHeader = () => {
         <router-link :to="{ path: '/' }"> Home </router-link>
       </li>
       <li :class="'loud'">
-        <router-link :to="{ path: 'comment' }"> Comments </router-link>
+        <router-link :to="{ path: 'notes' }"> Notes </router-link>
       </li>
       <li :class="'loud'">
         <router-link :to="{ path: 'about' }"> About</router-link>

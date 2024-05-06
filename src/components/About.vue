@@ -1,38 +1,42 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import GemmaInput from "./UI/GemmaInput.vue";
+import Configurator from "./Misc/Configurator.vue";
 
-// Define a reactive variable to hold the new comment
-const newComment = ref("");
-// Define an array to hold all the comments
-const comments = ref<string[]>([]);
-
-// Function to add a new comment to the list
-const addComment = () => {
-  if (newComment.value.trim() !== "") {
-    comments.value.push(newComment.value);
-    // Clear the textarea after adding the comment
-    newComment.value = "";
-  }
-};
-const removeComment = (index: any) => {
-  comments.value.splice(index, 1);
-};
+const elementsOfData = ref([
+  {
+    value: "a",
+    placeholder: "firstPlaceholder",
+    borderColor: "yellow",
+  },
+  {
+    value: "b",
+    placeholder: "secondPlaceholder",
+    borderColor: "red",
+  },
+  {
+    value: "c",
+    placeholder: "thirdPlaceholder",
+    borderColor: "green",
+  },
+]);
 </script>
+
 <template>
-  <div>
-    <h2>Comments</h2>
-    <form @submit.prevent="addComment">
-      <textarea
-        v-model="newComment"
-        placeholder="Enter your comment"
-      ></textarea>
-      <button type="submit">Publish</button>
-    </form>
-    <ul>
-      <li v-for="(comment, index) in comments" :key="index">
-        {{ comment }}
-        <button @click.prevent="removeComment" type="submit">Delete</button>
-      </li>
-    </ul>
+  <div class="margin">
+    Data
+    <pre>{{ elementsOfData }}</pre>
+
+    <div v-for="_ of elementsOfData">
+      <GemmaInput v-model="_.value" />
+    </div>
+
+    <Configurator v-model="elementsOfData" />
   </div>
 </template>
+
+<style lang="scss">
+.margin {
+  padding-top: 10rem;
+}
+</style>

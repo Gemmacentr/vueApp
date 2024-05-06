@@ -6,14 +6,14 @@ const childrenRoutes = [
   },
 
   {
-    path: "comment",
-    name: "comment",
-    component: () => import("./components/Comment.vue"),
-  },
-  {
     path: "about",
     name: "about",
     component: () => import("./components/About.vue"),
+  },
+  {
+    path: "notes",
+    name: "notes",
+    component: () => import("./components/Comment.vue"),
   },
 ];
 
